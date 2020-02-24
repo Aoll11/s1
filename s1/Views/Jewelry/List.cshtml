@@ -1,0 +1,30 @@
+﻿@using s1.ViewModels
+@model JewelryListViewModel
+
+@{
+    Layout = "_Layout" ; //будет использован шаблон из папки Shared с именем _Layoyt. Не
+    //Layout = null; //отсутствует главный шаблон
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <h1>Все украшения</h1>
+    <h3>@Model.jewelryCategory </h3>
+    @{ 
+        foreach (var jew in Model.AllJewelries) {
+        <div>
+            <h2>    @jew.name </h2>
+            <p>     @jew.price.ToString("c") </p> <!-- "c" - приведение к денежному формату. -->
+
+        </div>
+        }
+    }
+
+</body>
+</html>
